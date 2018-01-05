@@ -7991,7 +7991,7 @@ namespace Elasticsearch.Net
 		public Task<ElasticsearchResponse<T>> DeleteByQueryAsync<T>(string index, object body, Func<DeleteByQueryRequestParameters, DeleteByQueryRequestParameters> requestParameters = null)
 		{
 			index.ThrowIfNullOrEmpty("index");
-			var url = "{0}/_query".F(Encoded(index));
+			var url = "{0}/_delete_by_query".F(Encoded(index));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8002,7 +8002,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequestAsync<T>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
@@ -8028,7 +8028,7 @@ namespace Elasticsearch.Net
 		public ElasticsearchResponse<DynamicDictionary> DeleteByQuery(string index, object body, Func<DeleteByQueryRequestParameters, DeleteByQueryRequestParameters> requestParameters = null)
 		{
 			index.ThrowIfNullOrEmpty("index");
-			var url = "{0}/_query".F(Encoded(index));
+			var url = "{0}/_delete_by_query".F(Encoded(index));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8039,7 +8039,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequest<DynamicDictionary>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
@@ -8065,7 +8065,7 @@ namespace Elasticsearch.Net
 		public Task<ElasticsearchResponse<DynamicDictionary>> DeleteByQueryAsync(string index, object body, Func<DeleteByQueryRequestParameters, DeleteByQueryRequestParameters> requestParameters = null)
 		{
 			index.ThrowIfNullOrEmpty("index");
-			var url = "{0}/_query".F(Encoded(index));
+			var url = "{0}/_delete_by_query".F(Encoded(index));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8076,7 +8076,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequestAsync<DynamicDictionary>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
@@ -8102,7 +8102,7 @@ namespace Elasticsearch.Net
 		{
 			index.ThrowIfNullOrEmpty("index");
 			type.ThrowIfNullOrEmpty("type");
-			var url = "{0}/{1}/_query".F(Encoded(index), Encoded(type));
+			var url = "{0}/{1}/_delete_by_query".F(Encoded(index), Encoded(type));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8113,7 +8113,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequest<T>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
@@ -8139,7 +8139,7 @@ namespace Elasticsearch.Net
 		{
 			index.ThrowIfNullOrEmpty("index");
 			type.ThrowIfNullOrEmpty("type");
-			var url = "{0}/{1}/_query".F(Encoded(index), Encoded(type));
+			var url = "{0}/{1}/_delete_by_query".F(Encoded(index), Encoded(type));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8150,7 +8150,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequestAsync<T>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
@@ -8178,7 +8178,7 @@ namespace Elasticsearch.Net
 		{
 			index.ThrowIfNullOrEmpty("index");
 			type.ThrowIfNullOrEmpty("type");
-			var url = "{0}/{1}/_query".F(Encoded(index), Encoded(type));
+			var url = "{0}/{1}/_delete_by_query".F(Encoded(index), Encoded(type));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8189,7 +8189,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequest<DynamicDictionary>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
@@ -8217,7 +8217,7 @@ namespace Elasticsearch.Net
 		{
 			index.ThrowIfNullOrEmpty("index");
 			type.ThrowIfNullOrEmpty("type");
-			var url = "{0}/{1}/_query".F(Encoded(index), Encoded(type));
+			var url = "{0}/{1}/_delete_by_query".F(Encoded(index), Encoded(type));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -8228,7 +8228,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequestAsync<DynamicDictionary>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
