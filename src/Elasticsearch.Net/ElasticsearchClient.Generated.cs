@@ -7956,7 +7956,7 @@ namespace Elasticsearch.Net
 		public ElasticsearchResponse<T> DeleteByQuery<T>(string index, object body, Func<DeleteByQueryRequestParameters, DeleteByQueryRequestParameters> requestParameters = null)
 		{
 			index.ThrowIfNullOrEmpty("index");
-			var url = "{0}/_query".F(Encoded(index));
+			var url = "{0}/_delete_by_query".F(Encoded(index));
 			IRequestParameters requestParams = null;
 				
 			if (requestParameters != null)
@@ -7967,7 +7967,7 @@ namespace Elasticsearch.Net
 
 
 			return this.DoRequest<T>(
-				"DELETE", url, body, 
+				"POST", url, body, 
 				requestParameters: requestParams
 			);
 		}
